@@ -20,6 +20,12 @@ const router = createRouter({
       name: 'home',
       component: HomeView
     },
+    {
+      path: "/event",
+      name: "event",
+      component: EventView,
+      meta: { requiresAuth: true },
+    },
   ]
 })
 

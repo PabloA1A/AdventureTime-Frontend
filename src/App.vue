@@ -1,14 +1,14 @@
 <script setup>
-import { computed } from 'vue';
+import { computed } from 'vue'
 import { RouterView, useRouter } from 'vue-router'
-import NavBar from './components/NavBar.vue';
+import NavBar from './components/NavBar.vue'
 
 const route = useRouter();
-const hiddenPaths = ['/login', '/register']
+const hiddenPaths = ['/login', '/register', "/admin", "/admin/forms", "/admin/dashboard"]
 
 const showNavbar = computed(() => {
-  return !hiddenPaths.includes(route.path);
-});
+  return !hiddenPaths.includes(route.path)
+})
 
 
 </script>
