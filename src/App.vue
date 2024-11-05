@@ -1,8 +1,10 @@
 <script setup>
 import { computed } from 'vue';
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterView, useRouter } from 'vue-router'
+import NavBar from './components/NavBar.vue';
 
-const route = useRoute();
+const route = useRouter();
+const hiddenPaths = ['/login', '/register']
 
 const showNavbar = computed(() => {
   return !hiddenPaths.includes(route.path);
@@ -13,12 +15,10 @@ const showNavbar = computed(() => {
 
 <template>
 
-    <nav>
-      <RouterLink to="/home">Home</RouterLink>
-    </nav>
+  <NavBar v-if="showNavbar" />
 
-    <RouterView />
-    
+  <RouterView />
+
 </template>
 
 <style scoped></style>

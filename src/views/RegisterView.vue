@@ -10,5 +10,4 @@ const store = useAuthStore()
    <Register />
 </template>
 
-<style>
-</style>
+<style></style>
