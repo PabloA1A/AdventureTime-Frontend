@@ -65,13 +65,13 @@ function logout() {
                 <RouterLink v-if="store.user.isAuthenticated" to="/home"
                     class="text-sm font-semibold leading-6 text-gray-900">
                     Home</RouterLink>
-               <!--  <RouterLink v-if="store.user.isAuthenticated" to="/event"
+                <RouterLink v-if="store.user.isAuthenticated" to="/event"
                     class="text-sm font-semibold leading-6 text-gray-900">
                     Event</RouterLink>
                 <RouterLink v-if="store.user.isAuthenticated && store.user.role == 'ROLE_ADMIN'" to="/admin/dashboard"
                     class="text-sm font-semibold leading-6 text-gray-900">
                     Dashboard
-                </RouterLink> -->
+                </RouterLink>
             </div>
             <div class="hidden lg:flex lg:flex-1 lg:justify-end">
                 <a href="#" v-if="!store.user.isAuthenticated" @click="modificarRegister"
@@ -131,14 +131,14 @@ function logout() {
                             <RouterLink v-if="store.user.isAuthenticated" to="/home" @click="mobileMenuOpen = false"
                                 class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
                                 Home</RouterLink>
-                            <!-- <RouterLink v-if="store.user.isAuthenticated" to="/event" @click="mobileMenuOpen = false"
+                            <RouterLink v-if="store.user.isAuthenticated" to="/event" @click="mobileMenuOpen = false"
                                 class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
                                 Event</RouterLink>
                             <RouterLink v-if="store.user.isAuthenticated && store.user.role == 'ROLE_ADMIN'"
                                 @click="mobileMenuOpen = false" to="/admin/dashboard"
                                 class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
                                 Dashboard
-                            </RouterLink> -->
+                            </RouterLink>
                         </div>
                         <div v-if="!store.user.isAuthenticated" class="py-6">
                             <a href="#" @click="modificarRegister"
