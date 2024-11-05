@@ -15,10 +15,10 @@ const store = useAuthStore()
 
 const modificarLogin = () => {
     if (loginChange.login == false)
-        loginChange.setLogin(true);
+        loginChange.setLogin(true)
     else
-        loginChange.setLogin(false);
-};
+        loginChange.setLogin(false)
+}
 
 async function register() {
     if (username.value !== '' && password.value !== '' && email.value !== '') {
@@ -27,23 +27,23 @@ async function register() {
                 const response = await store.register(username.value, email.value, password.value);
 
                 if (response.message == "Register successful") {
-                    textSusses.value = `Correctly added the user ${response.username}`;
-                    textAlert.value = '';
-                    username.value = '';
-                    password.value = '';
-                    passwordAgain.value = '';
-                    email.value = '';
+                    textSusses.value = `Correctly added the user ${response.username}`
+                    textAlert.value = ''
+                    username.value = ''
+                    password.value = ''
+                    passwordAgain.value = ''
+                    email.value = ''
                 } else {
-                    textAlert.value = 'There was a problem with the registration!';
+                    textAlert.value = 'There was a problem with the registration!'
                 }
             } catch (error) {
-                textAlert.value = 'Error trying to register, please try again.';
+                textAlert.value = 'Error trying to register, please try again.'
             }
         } else {
-            textAlert.value = 'Passwords do not match!';
+            textAlert.value = 'Passwords do not match!'
         }
     } else {
-        textAlert.value = 'Username, email, or password cannot be null!';
+        textAlert.value = 'Username, email, or password cannot be null!'
     }
 }
 </script>
