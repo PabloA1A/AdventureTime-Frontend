@@ -11,7 +11,7 @@ export default class AuthRepository {
             const response = await axios.get(this.baseUrl + '/login', {
                 auth: {
                     "username": credentials.getUsername(),
-                    "password": credentials.getPassword()
+                    "password": btoa(credentials.getPassword()) 
                 },
                 withCredentials: true
             })
