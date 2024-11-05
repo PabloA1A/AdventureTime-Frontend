@@ -26,6 +26,23 @@ const router = createRouter({
       component: EventView,
       meta: { requiresAuth: true },
     },
+    {
+      path: "/admin",
+      component: DashboardLayout,
+      meta: { requiresAuth: true, requiresAuthAdmin: true },
+      children: [
+        {
+          path: "dashboard",
+          name: "dashboard",
+          component: DashboardView,
+        },
+        {
+          path: "forms",
+          name: "forms",
+          component: Forms,
+        },
+      ],
+    }
   ]
 })
 
