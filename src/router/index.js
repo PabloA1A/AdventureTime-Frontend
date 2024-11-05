@@ -9,14 +9,14 @@ const router = createRouter({
       redirect: "/home",
     },
     {
-      path: '/',
-      name: 'home',
-      component: HomeView
-    },
-    {
       path: "/register",
       name: "register",
       component: RegisterView,
+    },
+    {
+      path: '/home',
+      name: 'home',
+      component: HomeView
     },
   ]
 })
